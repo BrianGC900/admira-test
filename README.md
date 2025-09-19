@@ -11,16 +11,35 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 - Health checks y logging estructurado
 - Dockerizado para fácil despliegue
 
-## Ejecución
+# Ejecución
 
-# Probar mock ads
+## Local(Go)
+- Clonar el repositorio
+```bash
+    git clone https://github.com/BrianGC900/admira-test
+    cd admira-test
+```
+
+## Instalar dependencias
+- go mod tidy
+- go run main.go
+
+## Con Docker
+- Construir imagen y levantar servicio
+```bash
+    docker compose up --build
+```
+# Probar EndPoints 
+### Probar mock ads
 - curl http://localhost:3001
 
-# Probar mock crm  
+### Probar mock crm  
 - curl http://localhost:3002
 
-# Probar aplicación principal
+### Probar aplicación principal
 - curl.exe -X POST http://localhost:8080/ingest/run
+- curl.exe http://localhost:8080/healthz0
+- curl.exe http://localhost:8080/metrics/channel
 
 ### Requisitos
 
@@ -40,4 +59,4 @@ PORT=8080
 LOG_LEVEL=info
 MAX_RETRIES=3
 RETRY_BACKOFF_MS=1000
-
+```

@@ -40,7 +40,7 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 
 ### Probar aplicación principal
 - curl.exe -X POST http://localhost:8080/ingest/run
-- curl.exe http://localhost:8080/healthz0
+- curl.exe http://localhost:8080/healthz
 - curl.exe http://localhost:8080/metrics/channel
 
 ### Requisitos

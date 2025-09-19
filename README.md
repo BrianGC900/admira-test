@@ -21,8 +21,10 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 ```
 
 ## Instalar dependencias
-- go mod tidy
-- go run main.go
+```bash
+    go mod tidy
+    go run main.go
+```
 
 ## Con Docker
 - Construir imagen y levantar servicio

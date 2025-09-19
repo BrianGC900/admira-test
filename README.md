@@ -19,8 +19,8 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 # Probar mock crm  
 - curl http://localhost:3002
 
-# Probar tu aplicación principal
-- curl -X POST http://localhost:8080/ingest/run
+# Probar aplicación principal
+- curl.exe -X POST http://localhost:8080/ingest/run
 
 ### Requisitos
 

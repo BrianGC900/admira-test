@@ -1,0 +1,32 @@
+services:
+  mock-ads:
+    build: 
+      context: ./mock-ads
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  mock-crm:
+    build:
+      context: ./mock-crm
+    ports:
+      - "3002:3002"
+    restart: unless-stopped
+
+  admira:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - ADS_API_URL=${ADS_API_URL}
+      - CRM_API_URL=${CRM_API_URL}
+      - SINK_URL=${SINK_URL}
+      - SINK_SECRET=${SINK_SECRET}
+      - PORT=${PORT}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - MAX_RETRIES=${MAX_RETRIES}
+      - RETRY_BACKOFF_MS=${RETRY_BACKOFF_MS}
+    depends_on:
+      - mock-ads
+      - mock-crm
+    restart: unless-stopped

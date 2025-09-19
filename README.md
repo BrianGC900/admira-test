@@ -11,6 +11,9 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 - Health checks y logging estructurado
 - Dockerizado para fácil despliegue
 
+## Datos de entrada
+- Se utilizaron datos de entrada locales, ya que la URLs de API de mockio.io parecian estar caidas.
+
 # Ejecución
 
 ## Local(Go)
@@ -41,6 +44,7 @@ Servicio en Go para procesamiento ETL de datos de Ads y CRM, generando métricas
 ### Probar aplicación principal
 - curl.exe -X POST http://localhost:8080/ingest/run
 - curl.exe http://localhost:8080/healthz
+- curl.exe http://localhost:8080/readyz
 - curl.exe http://localhost:8080/metrics/channel
 
 ### Requisitos
